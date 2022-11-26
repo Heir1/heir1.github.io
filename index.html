@@ -1,52 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Mirrored from demo.htmlcodex.com/1331/freelancer-portfolio-template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 25 Nov 2022 15:41:47 GMT -->
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8">
+<title>Héritier N'kele N'kele</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Free HTML Templates" name="keywords">
+<meta content="Free HTML Templates" name="description">
+
+<link href="img/favicon.html" rel="icon">
+
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+
+<link href=".cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+<link href="css/style.css" rel="stylesheet">
 </head>
-<body>
-    <script src="https://apis.google.com/js/api.js"></script>
-<script>
-  /**
-   * Sample JavaScript code for youtube.subscriptions.list
-   * See instructions for running APIs Explorer code samples locally:
-   * https://developers.google.com/explorer-help/code-samples#javascript
-   */
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
 
-  function authenticate() {
-    return gapi.auth2.getAuthInstance()
-        .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
-        .then(function() { console.log("Sign-in successful"); },
-              function(err) { console.error("Error signing in", err); });
-  }
-  function loadClient() {
-    gapi.client.setApiKey("AIzaSyBoApGxPXp7K9NrnhI9sKIVzmWuoOkDOAo");
-    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-        .then(function() { console.log("GAPI client loaded for API"); },
-              function(err) { console.error("Error loading GAPI client for API", err); });
-  }
-  // Make sure the client is loaded and sign-in is complete before calling this method.
-  function execute() {
-    return gapi.client.youtube.subscriptions.list({
-      "part": [
-        "snippet,contentDetails"
-      ],
-      "mine": true
-    })
-        .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              },
-              function(err) { console.error("Execute error", err); });
-  }
-  gapi.load("client:auth2", function() {
-    gapi.auth2.init({client_id: "867024113066-0cqhnup3nh84f1ldr6kef9a0ug3e2qd3.apps.googleusercontent.com"});
-  });
-</script>
-<button onclick="authenticate().then(loadClient)">authorize and load</button>
-<button onclick="execute()">execute</button>
+<nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
+<a href="index.html" class="navbar-brand ml-lg-3">
+<h1 class="m-0 display-5"><span class="text-primary">Héritier</span>N'kele</h1>
+</a>
+<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
+<div class="navbar-nav m-auto py-0">
+<a href="#home" class="nav-item nav-link active">Home</a>
+<a href="#about" class="nav-item nav-link">About</a>
+<a href="#qualification" class="nav-item nav-link">Quality</a>
+<a href="#skill" class="nav-item nav-link">Skill</a>
+<a href="#service" class="nav-item nav-link">Achievements</a>
+<!-- <a href="#portfolio" class="nav-item nav-link">Portfolio</a> -->
+<!-- <a href="#testimonial" class="nav-item nav-link">Review</a> -->
+<!-- <a href="#blog" class="nav-item nav-link">Blog</a> -->
+<a href="#contact" class="nav-item nav-link">Contact</a>
+</div>
+<a href="#" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
+</div>
+</nav>
 
-</body>
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="#" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
+<img class="img-fluid w-100 rounded-circle shadow-sm" src="img/profile.jpg" alt="">
+</div>
+<div class="col-lg-7 text-center text-lg-left">
+<h3 class="text-white font-weight-normal mb-3">Je suis</h3>
+<h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Héritier N'kele</h1>
+<h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
+<div class="typed-text d-none">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer, Udemy Instructor</div>
+<div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+<a href="#" class="btn btn-outline-light mr-5">Download CV</a>
+<button type="button" class="btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+<span></span>
+</button>
+<h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">Play Video</h5>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid py-5" id="about">
+<div class="container">
+<div class="position-relative d-flex align-items-center justify-content-center">
+<h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
+<h1 class="position-absolute text-uppercase text-primary">About Me</h1>
+</div>
+<div class="row align-items-center">
+<div class="col-lg-5 pb-4 pb-lg-0">
+<img class="img-fluid rounded w-100" src="img/profile.jpg" alt="">
+</div>
+<div class="col-lg-7">
+<h3 class="mb-4">Fullstack Developer</h3>
+<p>Étant passionné de la technologie sur le développement web, j’ai une très forte capacité d’apprendre de nouvelles technologies, de m’adapter afin de booster votre entreprise et de la mettre au même diapason que l'évolution continue de la technologie.</p>
+<div class="row mb-3">
+<div class="col-sm-6 py-2"><h6>Name: <span class="text-secondary">Héritier N'kele N'kele</span></h6></div>
+<!-- <div class="col-sm-6 py-2"><h6>Birthday: <span class="text-secondary">1 April 1990</span></h6></div> -->
+<div class="col-sm-6 py-2"><h6>Niveau: <span class="text-secondary">Licencié en informatique industrielle et réseaux</span></h6></div>
+<div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary">4 ans</span></h6></div>
+<div class="col-sm-6 py-2"><h6>Téléphone: <span class="text-secondary">+243 824 754 958</span></h6></div>
+<div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary"><a href="" class="">nkeleheir@gmail.com</a></span></h6></div>
+<div class="col-sm-6 py-2"><h6>Address: <span class="text-secondary">Av. Malula num. 12 Lemba / Righini</span></h6></div>
+<!-- <div class="col-sm-6 py-2"><h6>Freelance: <span class="text-secondary">Dispoi</span></h6></div> -->
+</div>
+<a href="#" class="btn btn-outline-primary mr-4">Hire Me</a>
+<a href="#" class="btn btn-outline-primary">Learn More</a>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid py-5" id="qualification">
+<div class="container">
+<div class="position-relative d-flex align-items-center justify-content-center">
+<h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
+<h1 class="position-absolute text-uppercase text-primary">Education & Expericence</h1>
+</div>
+<div class="row align-items-center">
+<div class="col-lg-6">
+<h3 class="mb-4">My Education</h3>
+<div class="border-left border-primary pt-2 pl-4 ml-2">
+<div class="position-relative mb-4">
+<i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+<h5 class="font-weight-bold mb-1">Bac+ 2 en développement FullStack</h5>
+<p class="mb-2"><strong>Kinshasa Digital Académy </strong> | <small>•	Mai 2022 – à ce jour </small></p>
+<!-- <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p> -->
+</div>
+<div class="position-relative mb-4">
+<i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+<h5 class="font-weight-bold mb-1">Licence en Informatique industrielle et Réseaux</h5>
+<p class="mb-2"><strong>Institut Supérieur Pédagogique et Technique de Kinshasa (I.S.P.T. - KIN)</strong> | <small>•	Nov. 2016 –  Nov. 2018</small></p>
+<!-- <p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p> -->
+</div>
+<!-- <div class="position-relative mb-4">
+<i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+<h5 class="font-weight-bold mb-1">Master In CSE</h5>
+<p class="mb-2"><strong>Cambridge University</strong> | <small>2000 - 2050</small></p>
+<p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
+</div> -->
+</div>
+</div>
+<div class="col-lg-6">
+<h3 class="mb-4">My Expericence</h3>
+<div class="border-left border-primary pt-2 pl-4 ml-2">
+<div class="position-relative mb-4">
+<i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+<h5 class="font-weight-bold mb-1">Freelancer Full Stack Developer</h5>
+<p class="mb-2"><strong>CMK DGDA</strong> | <small>Mai. 2019 – Jui. 2022 </small></p>
+<p>Conception et Maintenance de l’application pour la gestion de produits pharmaceutiques de CMK DGDA </p>
+</div>
+<div class="position-relative mb-4">
+<i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+<h5 class="font-weight-bold mb-1">Formateur de cours en ligne</h5>
+<p class="mb-2"><strong>Udemy</strong> | <small>Mar. 2020 – Nov. 2022 </small></p>
+<p>Formateur de « PHP Laravel » sur Udemy</p>
+</div>
+<!-- <div class="position-relative mb-4">
+<i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+<h5 class="font-weight-bold mb-1">Web Designer</h5>
+<p class="mb-2"><strong>Soft Company</strong> | <small>2000 - 2050</small></p>
+<p>Tempor eos dolore amet tempor dolor tempor. Dolore ea magna sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet lorem diam</p>
+</div> -->
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid py-5" id="skill">
+<div class="container">
+<div class="position-relative d-flex align-items-center justify-content-center">
+<h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
+<h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
+</div>
+<div class="row align-items-center">
+<div class="col-md-6">
+<div class="skill mb-4">
+<div class="d-flex justify-content-between">
+<h6 class="font-weight-bold">HTML</h6>
+<h6 class="font-weight-bold">95%</h6>
+</div>
+<div class="progress">
+<div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="skill mb-4">
+<div class="d-flex justify-content-between">
+<h6 class="font-weight-bold">CSS</h6>
+<h6 class="font-weight-bold">85%</h6>
+</div>
+<div class="progress">
+<div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="skill mb-4">
+<div class="d-flex justify-content-between">
+<h6 class="font-weight-bold">PHP Laravel</h6>
+<h6 class="font-weight-bold">90%</h6>
+</div>
+<div class="progress">
+<div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="skill mb-4">
+<div class="d-flex justify-content-between">
+<h6 class="font-weight-bold">Java</h6>
+<h6 class="font-weight-bold">70%</h6>
+</div>
+
+<div class="progress">
+<div class="progress-bar bg-dark" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="skill mb-4">
+<div class="d-flex justify-content-between">
+<h6 class="font-weight-bold">Python</h6>
+<h6 class="font-weight-bold">60%</h6>
+</div>
+<div class="progress">
+<div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="skill mb-4">
+<div class="d-flex justify-content-between">
+<h6 class="font-weight-bold">Javascript</h6>
+<h6 class="font-weight-bold">90%</h6>
+</div>
+<div class="progress">
+<div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="skill mb-4">
+<div class="d-flex justify-content-between">
+<h6 class="font-weight-bold">React Js</h6>
+<h6 class="font-weight-bold">80%</h6>
+</div>
+
+<div class="progress">
+<div class="progress-bar bg-dark" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="skill mb-4">
+    <div class="d-flex justify-content-between">
+    <h6 class="font-weight-bold">NodeJs/Express</h6>
+    <h6 class="font-weight-bold">80%</h6>
+    </div>
+    <div class="progress">
+    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+</div>
+<div class="skill mb-4">
+<div class="d-flex justify-content-between">
+<h6 class="font-weight-bold">Wordpress</h6>
+<h6 class="font-weight-bold">85%</h6>
+</div>
+ <div class="progress">
+<div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="skill mb-4">
+    <div class="d-flex justify-content-between">
+    <h6 class="font-weight-bold">C#</h6>
+    <h6 class="font-weight-bold">80%</h6>
+    </div>
+    
+    <div class="progress">
+    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid pt-5" id="service">
+<div class="container">
+<div class="position-relative d-flex align-items-center justify-content-center">
+<h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Achievements</h1>
+<h1 class="position-absolute text-uppercase text-primary">My Achievements</h1>
+</div>
+<div class="row pb-3">
+<div class="col-lg-4 col-md-6 text-center mb-5">
+<div class="d-flex align-items-center justify-content-center mb-4">
+<i class="fa fa-2x fa-laptop service-icon bg-primary text-white mr-3"></i>
+<h4 class="font-weight-bold m-0">C# et Arduino Uno</h4>
+</div>
+<p>Conceptions et Réalisations d'une application de système de pointage de personnels administratifs de L'I.S.P.T-KIN par empreinte digitale</p>
+<!-- <a class="border-bottom border-primary text-decoration-none" href="#">Read More</a> -->
+</div>
+<div class="col-lg-4 col-md-6 text-center mb-5">
+<div class="d-flex align-items-center justify-content-center mb-4">
+<i class="fa fa-2x fa-laptop-code service-icon bg-primary text-white mr-3"></i>
+<h4 class="font-weight-bold m-0">PHP Laravel</h4>
+</div>
+<p>Conception et réalisation d'une application de gestion de produits pharmaceutiques de la DGDA</p>
+<!-- <a class="border-bottom border-primary text-decoration-none" href="#">Read More</a> -->
+</div>
+<div class="col-lg-4 col-md-6 text-center mb-5">
+<div class="d-flex align-items-center justify-content-center mb-4">
+<i class="fab fa-2x fa-android service-icon bg-primary text-white mr-3"></i>
+<h4 class="font-weight-bold m-0">PHP Laravel</h4>
+</div>
+<p>Création d'une application web E-commerce  avec un système de paiement de sept cartes crédits internationnaux (Visa, Mastercard, American express, Union Pay, JCB, Diners club, Discover)</p>
+<!-- <a class="border-bottom border-primary text-decoration-none" href="#">Read More</a> -->
+</div>
+<div class="col-lg-4 col-md-6 text-center mb-5">
+<div class="d-flex align-items-center justify-content-center mb-4">
+<i class="fab fa-2x fa-apple service-icon bg-primary text-white mr-3"></i>
+<h4 class="font-weight-bold m-0">ReactJs et NodeJs/Express</h4>
+</div>
+<p>Création d'une application pour les suivis de vidéos youtube avec Youtube Api</p>
+<!-- <a class="border-bottom border-primary text-decoration-none" href="#">Read More</a> -->
+</div>
+<div class="col-lg-4 col-md-6 text-center mb-5">
+<div class="d-flex align-items-center justify-content-center mb-4">
+<i class="fa fa-2x fa-search service-icon bg-primary text-white mr-3"></i>
+<h4 class="font-weight-bold m-0">ReactJs et NodeJs/Express</h4>
+</div>
+<p>Création d'une application web E-commerce  avec un système de paiement de sept cartes crédits internationnaux (Visa, Mastercard, American express, Union Pay, JCB, Diners club, Discover)</p>
+<!-- <a class="border-bottom border-primary text-decoration-none" href="#">Read More</a> -->
+</div>
+<div class="col-lg-4 col-md-6 text-center mb-5">
+ <div class="d-flex align-items-center justify-content-center mb-4">
+<i class="fa fa-2x fa-edit service-icon bg-primary text-white mr-3"></i>
+<h4 class="font-weight-bold m-0">Wordpress</h4>
+</div>
+<p>Création d'un site pour influencer les femmes à intégrer les mondes numériques (Mwasi Teck)</p>
+<!-- <a class="border-bottom border-primary text-decoration-none" href="#">Read More</a> -->
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- <div class="container-fluid pt-5 pb-3" id="portfolio">
+<div class="container">
+<div class="position-relative d-flex align-items-center justify-content-center">
+<h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Gallery</h1>
+<h1 class="position-absolute text-uppercase text-primary">My Portfolio</h1>
+</div>
+<div class="row">
+<div class="col-12 text-center mb-2">
+<ul class="list-inline mb-4" id="portfolio-flters">
+<li class="btn btn-sm btn-outline-primary m-1 active" data-filter="*">All</li>
+<li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Design</li>
+<li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Development</li>
+<li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Marketing</li>
+</ul>
+</div>
+</div>
+<div class="row portfolio-container">
+<div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+<div class="position-relative overflow-hidden mb-2">
+<img class="img-fluid rounded w-100" src="img/portfolio-1.jpg" alt="">
+<div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+<a href="img/portfolio-1.jpg" data-lightbox="portfolio">
+<i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
+<div class="position-relative overflow-hidden mb-2">
+<img class="img-fluid rounded w-100" src="img/portfolio-2.jpg" alt="">
+<div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+<a href="img/portfolio-2.jpg" data-lightbox="portfolio">
+<i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
+<div class="position-relative overflow-hidden mb-2">
+<img class="img-fluid rounded w-100" src="img/portfolio-3.jpg" alt="">
+<div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+<a href="img/portfolio-3.jpg" data-lightbox="portfolio">
+<i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+<div class="position-relative overflow-hidden mb-2">
+<img class="img-fluid rounded w-100" src="img/portfolio-4.jpg" alt="">
+<div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+<a href="img/portfolio-4.jpg" data-lightbox="portfolio">
+<i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
+<div class="position-relative overflow-hidden mb-2">
+<img class="img-fluid rounded w-100" src="img/portfolio-5.jpg" alt="">
+<div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+<a href="img/portfolio-5.jpg" data-lightbox="portfolio">
+<i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
+<div class="position-relative overflow-hidden mb-2">
+<img class="img-fluid rounded w-100" src="img/portfolio-6.jpg" alt="">
+<div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+<a href="img/portfolio-6.jpg" data-lightbox="portfolio">
+<i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> -->
+
+
+<!-- <div class="container-fluid py-5" id="testimonial">
+<div class="container">
+<div class="position-relative d-flex align-items-center justify-content-center">
+<h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Review</h1>
+<h1 class="position-absolute text-uppercase text-primary">Clients Say</h1>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-8">
+<div class="owl-carousel testimonial-carousel">
+<div class="text-center">
+<i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+<h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
+<img class="img-fluid rounded-circle mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
+<h5 class="font-weight-bold m-0">Client Name</h5>
+<span>Profession</span>
+</div>
+<div class="text-center">
+<i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+<h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
+<img class="img-fluid rounded-circle mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
+<h5 class="font-weight-bold m-0">Client Name</h5>
+<span>Profession</span>
+</div>
+<div class="text-center">
+<i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+<h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita</h4>
+<img class="img-fluid rounded-circle mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
+<h5 class="font-weight-bold m-0">Client Name</h5>
+<span>Profession</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> -->
+
+
+<!-- <div class="container-fluid pt-5" id="blog">
+<div class="container">
+<div class="position-relative d-flex align-items-center justify-content-center">
+<h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Blog</h1>
+<h1 class="position-absolute text-uppercase text-primary">Latest Blog</h1>
+</div>
+<div class="row">
+<div class="col-lg-4 mb-5">
+<div class="position-relative mb-4">
+<img class="img-fluid rounded w-100" src="img/blog-1.jpg" alt="">
+<div class="blog-date">
+<h4 class="font-weight-bold mb-n1">01</h4>
+<small class="text-white text-uppercase">Jan</small>
+</div>
+</div>
+<h5 class="font-weight-medium mb-4">Rebum lorem no eos ut ipsum diam tempor sed rebum elitr ipsum</h5>
+<a class="btn btn-sm btn-outline-primary py-2" href="#">Read More</a>
+</div>
+<div class="col-lg-4 mb-5">
+<div class="position-relative mb-4">
+<img class="img-fluid rounded w-100" src="img/blog-2.jpg" alt="">
+<div class="blog-date">
+<h4 class="font-weight-bold mb-n1">01</h4>
+<small class="text-white text-uppercase">Jan</small>
+</div>
+</div>
+<h5 class="font-weight-medium mb-4">Rebum lorem no eos ut ipsum diam tempor sed rebum elitr ipsum</h5>
+<a class="btn btn-sm btn-outline-primary py-2" href="#">Read More</a>
+</div>
+<div class="col-lg-4 mb-5">
+<div class="position-relative mb-4">
+<img class="img-fluid rounded w-100" src="img/blog-3.jpg" alt="">
+<div class="blog-date">
+<h4 class="font-weight-bold mb-n1">01</h4>
+<small class="text-white text-uppercase">Jan</small>
+</div>
+</div>
+<h5 class="font-weight-medium mb-4">Rebum lorem no eos ut ipsum diam tempor sed rebum elitr ipsum</h5>
+<a class="btn btn-sm btn-outline-primary py-2" href="#">Read More</a>
+</div>
+</div>
+</div>
+</div> -->
+
+
+<div class="container-fluid py-5" id="contact">
+<div class="container">
+<div class="position-relative d-flex align-items-center justify-content-center">
+<h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
+<h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-8">
+<div class="contact-form text-center">
+<div id="success"></div>
+<form name="sentMessage" id="contactForm" novalidate="novalidate">
+<div class="form-row">
+<div class="control-group col-sm-6">
+<input type="text" class="form-control p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+<p class="help-block text-danger"></p>
+</div>
+<div class="control-group col-sm-6">
+<input type="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+<p class="help-block text-danger"></p>
+</div>
+</div>
+<div class="control-group">
+<input type="text" class="form-control p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+<p class="help-block text-danger"></p>
+</div>
+<div class="control-group">
+<textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+<p class="help-block text-danger"></p>
+</div>
+<div>
+<button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send
+Message</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+<div class="container text-center py-5">
+<div class="d-flex justify-content-center mb-4">
+<a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+<a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+<a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+<a class="btn btn-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+</div>
+<div class="d-flex justify-content-center mb-3">
+<!-- <a class="text-white" href="#">Privacy</a>
+<span class="px-3">|</span>
+<a class="text-white" href="#">Terms</a>
+<span class="px-3">|</span>
+<a class="text-white" href="#">FAQs</a>
+<span class="px-3">|</span>
+<a class="text-white" href="#">Help</a> -->
+</div>
+<!-- <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">Domain Name</a>. All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="https://htmlcodex.com/">HTML Codex</a>
+</p> -->
+</div>
+</div>
+
+
+<i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+
+<a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="code.jquery.com/jquery-3.4.1.min.js" type="03ed52efffb8c8b98bcb0c4e-text/javascript"></script>
+<script src="stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" type="03ed52efffb8c8b98bcb0c4e-text/javascript"></script>
+<script src="lib/typed/typed.min.js" type="03ed52efffb8c8b98bcb0c4e-text/javascript"></script>
+<script src="lib/easing/easing.min.js" type="03ed52efffb8c8b98bcb0c4e-text/javascript"></script>
+<script src="lib/waypoints/waypoints.min.js" type="03ed52efffb8c8b98bcb0c4e-text/javascript"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js" type="03ed52efffb8c8b98bcb0c4e-text/javascript"></script>
+<script src="lib/isotope/isotope.pkgd.min.js" type="03ed52efffb8c8b98bcb0c4e-text/javascript"></script>
+<script src="lib/lightbox/js/lightbox.min.js" type="03ed52efffb8c8b98bcb0c4e-text/javascript"></script>
+
+<script src="mail/jqBootstrapValidation.min.js" type="03ed52efffb8c8b98bcb0c4e-text/javascript"></script>
+<script src="mail/contact.html" type="03ed52efffb8c8b98bcb0c4e-text/javascript"></script>
+
+<script src="js/main.js" type="03ed52efffb8c8b98bcb0c4e-text/javascript"></script>
+<script src="cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="03ed52efffb8c8b98bcb0c4e-|49" defer=""></script></body>
+
+<!-- Mirrored from demo.htmlcodex.com/1331/freelancer-portfolio-template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 25 Nov 2022 15:41:47 GMT -->
 </html>
